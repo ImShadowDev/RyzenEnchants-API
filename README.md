@@ -161,7 +161,7 @@ double effective = api.getEffectiveMultiplier(player);
 
 // Individual values
 double personal = api.getPersonalMultiplier(uuid);
-double global   = api.getGlobalMultiplier();
+double global = api.getGlobalMultiplier();
 
 // Set personal multiplier (expiryMs = System.currentTimeMillis() + duration, or 0 for permanent)
 api.setPersonalMultiplier(uuid, 1.5, 0L);                               // permanent
