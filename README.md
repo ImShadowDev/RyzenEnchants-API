@@ -92,18 +92,18 @@ boolean isRyzen = api.isRyzenPickaxe(item);
 api.givePickaxe(player);
 
 // Read data
-data.getOwner();           // UUID
-data.getOwnerName();       // Last known username
-data.getLevel();           // Pickaxe level (starts at 1)
-data.getEnergy();          // Current energy
-data.getDurability();      // Current durability
-data.getSlotsMax();        // Total enchant slots
-data.getSlotsUsed();       // Slots currently in use
+data.getOwner(); // UUID
+data.getOwnerName(); // Last known username
+data.getLevel(); // Pickaxe level (starts at 1)
+data.getEnergy(); // Current energy
+data.getDurability(); // Current durability
+data.getSlotsMax(); // Total enchant slots
+data.getSlotsUsed(); // Slots currently in use
 
 // Enchants on the pickaxe
-data.hasEnchant("fortune");          // true/false
-data.getEnchantLevel("fortune");     // 0 if not unlocked
-data.getEnchants();                  // Map<String, Integer> — unmodifiable
+data.hasEnchant("fortune"); // true/false
+data.getEnchantLevel("fortune"); // 0 if not unlocked
+data.getEnchants(); // Map<String, Integer> — unmodifiable
 ```
 
 ---
@@ -119,7 +119,7 @@ long tokens = api.getTokens(uuid);
 api.giveTokens(player, 5000L);
 api.setTokens(player, 10000L);
 
-// Take tokens — returns false if the player doesn't have enough
+// Take tokens - returns false if the player doesn't have enough
 boolean success = api.takeTokens(player, 1000L);
 ```
 
@@ -135,15 +135,15 @@ Collection<ApiEnchantDefinition> enchants = api.getEnchants();
 ApiEnchantDefinition def = api.getEnchant("fortune");
 
 if (def != null) {
-    def.getName();              // "fortune"
-    def.getDisplayName();       // Color-coded display name
-    def.isEnabled();            // Whether it's globally active
-    def.getMaxLevel();          // Max level cap
-    def.getTriggerType();       // "MINE_BLOCK", "HELD", etc.
-    def.getChance(50);          // Activation chance at level 50
-    def.calculateCost(10, 5);   // Cost to go from level 10 to level 15
-    def.isTogglable();          // Whether players can toggle it
-    def.getMinPickaxeLevel();   // Required pickaxe level (0 = none)
+    def.getName(); // "fortune"
+    def.getDisplayName(); // Color-coded display name
+    def.isEnabled(); // Whether it's globally active
+    def.getMaxLevel(); // Max level cap
+    def.getTriggerType(); // "MINE_BLOCK", "HELD", etc.
+    def.getChance(50); // Activation chance at level 50
+    def.calculateCost(10, 5); // Cost to go from level 10 to level 15
+    def.isTogglable(); // Whether players can toggle it
+    def.getMinPickaxeLevel(); // Required pickaxe level (0 = none)
 }
 
 // Read or write a player's enchant level
@@ -193,8 +193,8 @@ Fired before a player upgrades an enchant. Cancelling prevents the upgrade and t
 public void onUpgrade(PickaxeEnchantUpgradeEvent event) {
     Player player = event.getPlayer();
     String enchant = event.getEnchantName();
-    int from  = event.getPreviousLevel();
-    int to    = event.getNewLevel();
+    int from = event.getPreviousLevel();
+    int to = event.getNewLevel();
     long cost = event.getCost();
 
     // Prevent upgrading fortune above level 50
