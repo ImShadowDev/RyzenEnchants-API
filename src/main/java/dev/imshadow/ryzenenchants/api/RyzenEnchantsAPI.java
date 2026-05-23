@@ -44,7 +44,6 @@ public interface RyzenEnchantsAPI {
 
     void setPersonalMultiplier(UUID uuid, double value, long expiryMs);
 
-
     void addPersonalMultiplier(UUID uuid, double value, long expiryMs);
 
     void removePersonalMultiplier(UUID uuid);
